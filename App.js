@@ -1,23 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React, { useState } from "react";
+import { StyleSheet, Text, View, Image } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import NavBar from "./components/nav"
-//import homeLogo from "./assets/home.png"
-//import transactionLogo from "./assets/transactions.png"
+import MonthlyOverview from "./components/monthly-overview"
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Welcome to Moneymalist!</Text>
-      <NavBar/>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+	<MonthlyOverview/>
+	<Text>Welcome to Moneymalist!</Text>
+	<NavBar/>
+	<StatusBar style="auto" />
+    </SafeAreaView>
   );
 }
 
+
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 15,
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
   },
 });
