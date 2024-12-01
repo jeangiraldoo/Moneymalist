@@ -8,6 +8,15 @@ import shoppingCartLogo from "../assets/shopping-cart.png"
 import currencyConverterLogo from "../assets/money-exchange.png"
 import billsLogo from "../assets/bills.png"
 
+/**
+ * A component that arranges a grid with buttons for the app's main features.
+ *
+ * Features:
+ * - Displays a grid of buttons, each navigating to a feature-specific screen.
+ *
+ * @component
+ * @returns {React.ReactElement} A React Native element displaying the feature grid.
+ */
 export default function Toolbar(){
   return(
 	<View style={styles.toolbar}>
