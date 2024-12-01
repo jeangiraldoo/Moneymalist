@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Pressable, Image } from 'react-native';
-import homeLogo from "../assets/home.png"
-import transactionLogo from "../assets/transactions.png"
+import homeLogo from "../../../assets/home.png"
+import transactionLogo from "../../../assets/transactions.png"
 
 
 /**
