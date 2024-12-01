@@ -4,12 +4,13 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import NavBar from "./components/nav"
 import MonthlyOverview from "./components/monthly-overview"
+import Toolbar from "./components/toolbar"
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
 	<MonthlyOverview/>
-	<Text>Welcome to Moneymalist!</Text>
+	<Toolbar/>
 	<NavBar/>
 	<StatusBar style="auto" />
     </SafeAreaView>
