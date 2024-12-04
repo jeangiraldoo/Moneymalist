@@ -19,7 +19,7 @@ const btns_pos = {
  * - Two auxiliary buttons are displayed, allowing the user to add either
  *   an income or an expense transaction.
  */
-export default function AddButton() {
+export default function Button() {
 	const [clickedBtn, setClickedBtn] = useState(false)
 
 	const animStartVal = 0, animEndVal = 1

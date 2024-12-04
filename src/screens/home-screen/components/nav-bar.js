@@ -8,7 +8,7 @@ import { SvgXml } from 'react-native-svg';
  * - The selected button is visually highlighted using a background color.
  * - Uses internal state to track which button is currently selected.
 */
-export default function navBar(){
+export default function NavBar(){
 	const [clickedBtnID, setClickedBtnID] = useState(0)
 	return (
 		<View style={styles.nav}>

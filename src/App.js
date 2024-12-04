@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import HomeScreen from "./screens/home-screen/home-screen.js";
+import { HomeScreen } from "./screens/home-screen";
 
 export default function App() {
 	return (

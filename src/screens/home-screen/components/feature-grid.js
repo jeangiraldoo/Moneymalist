@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Pressable, Image } from 'react-native';
-import budgetLogo from "../../../assets/budget.png"
-import goalLogo from "../../../assets/goal.png"
-import investmentLogo from "../../../assets/investment.png"
-import emergencyFundLogo from "../../../assets/emergency-fund.png"
-import shoppingCartLogo from "../../../assets/shopping-cart.png"
-import currencyConverterLogo from "../../../assets/money-exchange.png"
-import billsLogo from "../../../assets/bills.png"
+import budgetLogo from "../../../../assets/budget.png"
+import goalLogo from "../../../../assets/goal.png"
+import investmentLogo from "../../../../assets/investment.png"
+import emergencyFundLogo from "../../../../assets/emergency-fund.png"
+import shoppingCartLogo from "../../../../assets/shopping-cart.png"
+import currencyConverterLogo from "../../../../assets/money-exchange.png"
+import billsLogo from "../../../../assets/bills.png"
 
 /**
  * A component that arranges a grid with buttons for the app's main features.
@@ -17,7 +17,7 @@ import billsLogo from "../../../assets/bills.png"
  * @component
  * @returns {React.ReactElement} A React Native element displaying the feature grid.
  */
-export default function Toolbar(){
+export default function FeatureGrid(){
   return(
 	<View style={styles.toolbar}>
 	  <View style={styles.toolbarRow}>

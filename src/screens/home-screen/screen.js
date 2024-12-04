@@ -3,19 +3,15 @@ import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import MainOverview from "./main-overview"
-import MonthlyOverview from "./monthly-overview"
-import Toolbar from "./toolbar"
-import NavBar from "./nav"
-import AddButton from "./add-button"
+import { Overview, MonthlyOverview, FeatureGrid, NavBar, Button } from "./components";
 
 export default function HomeScreen() {
 	return (
 		<SafeAreaView style={styles.container}>
-			<MainOverview/>
+			<Overview/>
 			<MonthlyOverview/>
-			<Toolbar/>
-			<AddButton/>
+			<FeatureGrid/>
+			<Button/>
 			<NavBar/>
 			<StatusBar style="auto" />
 		</SafeAreaView>
@@ -30,4 +26,3 @@ const styles = StyleSheet.create({
 		justifyContent: "flex-start",
 	},
 });
-
