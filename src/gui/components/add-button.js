@@ -2,22 +2,6 @@ import React, { useState } from "react";
 import { Animated, StyleSheet, View, Text, Pressable } from "react-native";
 import { SvgXml } from 'react-native-svg';
 
-const addIncomeLogo = `<?xml version="1.0" encoding="utf-8"?>
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none"
-xmlns="http://www.w3.org/2000/svg"><path d="M8 12H16M22 12C22 17.5228 17.5228 22 12
-22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
-stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>`;
-
-const mainLogo = `<?xml version="1.0" encoding="utf-8"?>
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none"
-xmlns="http://www.w3.org/2000/svg"> <path d="M12 8V16M8 12H16M22 12C22 17.5228 17.5228
-22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
-stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>`;
-
 const btnSize = 60
 
 // Buttons available with their respective positions within the component
@@ -198,3 +182,24 @@ const styles = StyleSheet.create({
 
 styles.button = { ...styles.image, ...styles.button }
 styles.auxiliaryButton = { ...styles.button, ...styles.auxiliaryButton }
+
+const addIncomeLogo = `
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+	<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+		 xmlns="http://www.w3.org/2000/svg">
+		 <path d="M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2
+			   12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="#000000"
+			   stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+	</svg>`;
+
+const mainLogo = `
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+	<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+		 xmlns="http://www.w3.org/2000/svg">
+		<path d="M12 8V16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2
+			  17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+			  stroke="#000000" stroke-width="2" stroke-linecap="round"
+			  stroke-linejoin="round"/>
+	</svg>`;
