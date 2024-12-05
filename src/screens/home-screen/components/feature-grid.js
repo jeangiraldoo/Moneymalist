@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Pressable, Image } from 'react-native';
-import { SvgXml } from 'react-native-svg';
 
 import BudgetLogo from "./logos/budget"
 import GoalLogo from "./logos/goal"
@@ -11,6 +10,33 @@ import CurrencyConverterLogo from "./logos/currency-converter"
 import BillsLogo from "./logos/bills.js"
 
 const featLogoSize = 45
+const featsPerRow = 3
+const feats = [
+			{name: "Budget", Logo: BudgetLogo},
+			{name: "Shopping list", Logo: CartLogo},
+			{name: "Bills", Logo: BillsLogo},
+			{name: "Goals", Logo: GoalLogo},
+			{name: "Emergency fund", Logo: EmergencyFundLogo},
+			{name: "Currency converter", Logo: CurrencyConverterLogo},
+			{name: "Investments", Logo: InvestmentLogo}
+			];
+
+/**
+ * Divides an array into subarrays, each representing a row in a grid.
+ *
+ * @param {Object[]} featList - The array of objects representing features.
+ * @param {number} size - The number of elements per row.
+ * @returns {Object[][]} A two-dimensional array where each subarray represents a row in the grid.
+ */
+const arrangeRows = (featList, size) => {
+	return featList.reduce( (resultArray, current_comp, idx) => {
+		const row = Math.floor(idx/size);	
+		if (!resultArray[row]) resultArray[row] = [];
+		resultArray[row].push(current_comp);
+		return resultArray;
+	}, []);
+}
+
 
 /**
  * A component that arranges a grid with buttons for the app's main features.
@@ -22,45 +48,21 @@ const featLogoSize = 45
  * @returns {React.ReactElement} A React Native element displaying the feature grid.
  */
 export default function FeatureGrid(){
-	console.log(BudgetLogo)
+	const rows = arrangeRows(feats, featsPerRow)
 	return(
 		<View style={styles.toolbar}>
-	  		<View style={styles.toolbarRow}>
-	    		<Pressable style={styles.toolbarButton}>
-					<BudgetLogo width={featLogoSize} height={featLogoSize}/>
-	      			<Text>Budget</Text>
-	    		</Pressable>
-	    		<Pressable style={styles.toolbarButton}>
-					<CartLogo width={featLogoSize} height={featLogoSize}/>
-				  	<Text>Shopping list</Text>
-	    		</Pressable>
-	    		<Pressable style={styles.toolbarButton}>
-					<BillsLogo width={featLogoSize} height={featLogoSize}/>
-	      			<Text>Bills</Text>
-	    		</Pressable>
-	  		</View>
-	  		<View style={styles.toolbarRow}>
-	    		<Pressable style={styles.toolbarButton}>
-					<GoalLogo width={featLogoSize} height={featLogoSize}/>
-	      			<Text>Goals</Text>
-	    		</Pressable>
-	    		<Pressable style={styles.toolbarButton}>
-					<EmergencyFundLogo width={featLogoSize} height={featLogoSize}/>
-	      			<Text style={{textAlign: "center"}}>Emergency fund</Text>
-	    		</Pressable>
-	    		<Pressable style={styles.toolbarButton}>
-					<CurrencyConverterLogo width={featLogoSize} height={featLogoSize}/>
-	      			<Text>Currency converter</Text>
-	    		</Pressable>
-	  		</View>
-	  		<View style={[styles.toolbarRow, {alignSelf: "flex-start"}]}>
-	    		<Pressable style={styles.toolbarButton}>
-					<InvestmentLogo width={featLogoSize} height={featLogoSize}/>
-	      			<Text>Investments</Text>
-	    		</Pressable>
-			</View>
+			{rows.map( (row, rowIdx) => (
+				<View key={rowIdx} style={[styles.toolbarRow, {alignSelf: "flex-start"}]}>
+					{row.map( ({name, Logo} ) => (
+						<Pressable key={name} style={styles.toolbarButton}>
+							<Logo width={featLogoSize} height={featLogoSize}/>
+							<Text style={{textAlign: "center"}}>{name}</Text>
+						</Pressable>
+					))}
+				</View>
+			))}
 		</View>
-  );
+	);
 }
 
 const styles = StyleSheet.create({
@@ -70,6 +72,7 @@ const styles = StyleSheet.create({
   },
   toolbarRow: {
     flexDirection: "row",
+	alignItems: "center",
   },
   image: {
     width: 45,
