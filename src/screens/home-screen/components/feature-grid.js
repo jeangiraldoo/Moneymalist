@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Pressable, Image } from 'react-native';
-import budgetLogo from "../../../../assets/budget.png"
-import goalLogo from "../../../../assets/goal.png"
-import investmentLogo from "../../../../assets/investment.png"
-import emergencyFundLogo from "../../../../assets/emergency-fund.png"
-import shoppingCartLogo from "../../../../assets/shopping-cart.png"
-import currencyConverterLogo from "../../../../assets/money-exchange.png"
-import billsLogo from "../../../../assets/bills.png"
+import { SvgXml } from 'react-native-svg';
+
+import BudgetLogo from "./logos/budget"
+import GoalLogo from "./logos/goal"
+import InvestmentLogo from "./logos/investments"
+import EmergencyFundLogo from "./logos/emergency-fund"
+import CartLogo from "./logos/cart.js"
+import CurrencyConverterLogo from "./logos/currency-converter"
+import BillsLogo from "./logos/bills.js"
+
+const featLogoSize = 45
 
 /**
  * A component that arranges a grid with buttons for the app's main features.
@@ -18,43 +22,44 @@ import billsLogo from "../../../../assets/bills.png"
  * @returns {React.ReactElement} A React Native element displaying the feature grid.
  */
 export default function FeatureGrid(){
-  return(
-	<View style={styles.toolbar}>
-	  <View style={styles.toolbarRow}>
-	    <Pressable style={styles.toolbarButton}>
-	      <Image source={budgetLogo} style={styles.image}/>
-	      <Text>Budget</Text>
-	    </Pressable>
-	    <Pressable style={styles.toolbarButton}>
-	      <Image source={shoppingCartLogo} style={styles.image}/>
-	      <Text>Shopping list</Text>
-	    </Pressable>
-	    <Pressable style={styles.toolbarButton}>
-	      <Image source={billsLogo} style={styles.image}/>
-	      <Text>Bills</Text>
-	    </Pressable>
-	  </View>
-	  <View style={styles.toolbarRow}>
-	    <Pressable style={styles.toolbarButton}>
-	      <Image source={goalLogo} style={styles.image}/>
-	      <Text>Goals</Text>
-	    </Pressable>
-	    <Pressable style={styles.toolbarButton}>
-	      <Image source={emergencyFundLogo} style={styles.image}/>
-	      <Text style={{textAlign: "center"}}>Emergency fund</Text>
-	    </Pressable>
-	    <Pressable style={styles.toolbarButton}>
-	      <Image source={currencyConverterLogo} style={styles.image}/>
-	      <Text>Currency converter</Text>
-	    </Pressable>
-	  </View>
-	  <View style={[styles.toolbarRow, {alignSelf: "flex-start"}]}>
-	    <Pressable style={styles.toolbarButton}>
-	      <Image source={investmentLogo} style={styles.image}/>
-	      <Text>Investments</Text>
-	    </Pressable>
-	  </View>
-	</View>
+	console.log(BudgetLogo)
+	return(
+		<View style={styles.toolbar}>
+	  		<View style={styles.toolbarRow}>
+	    		<Pressable style={styles.toolbarButton}>
+					<BudgetLogo width={featLogoSize} height={featLogoSize}/>
+	      			<Text>Budget</Text>
+	    		</Pressable>
+	    		<Pressable style={styles.toolbarButton}>
+					<CartLogo width={featLogoSize} height={featLogoSize}/>
+				  	<Text>Shopping list</Text>
+	    		</Pressable>
+	    		<Pressable style={styles.toolbarButton}>
+					<BillsLogo width={featLogoSize} height={featLogoSize}/>
+	      			<Text>Bills</Text>
+	    		</Pressable>
+	  		</View>
+	  		<View style={styles.toolbarRow}>
+	    		<Pressable style={styles.toolbarButton}>
+					<GoalLogo width={featLogoSize} height={featLogoSize}/>
+	      			<Text>Goals</Text>
+	    		</Pressable>
+	    		<Pressable style={styles.toolbarButton}>
+					<EmergencyFundLogo width={featLogoSize} height={featLogoSize}/>
+	      			<Text style={{textAlign: "center"}}>Emergency fund</Text>
+	    		</Pressable>
+	    		<Pressable style={styles.toolbarButton}>
+					<CurrencyConverterLogo width={featLogoSize} height={featLogoSize}/>
+	      			<Text>Currency converter</Text>
+	    		</Pressable>
+	  		</View>
+	  		<View style={[styles.toolbarRow, {alignSelf: "flex-start"}]}>
+	    		<Pressable style={styles.toolbarButton}>
+					<InvestmentLogo width={featLogoSize} height={featLogoSize}/>
+	      			<Text>Investments</Text>
+	    		</Pressable>
+			</View>
+		</View>
   );
 }
 
